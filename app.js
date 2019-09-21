@@ -37,7 +37,8 @@ const mongoPassword = process.env.MONGO_PASSWORD;
 const mongoDB = process.env.MONGO_DB;
 
 mongoose.connect(
-    `mongodb+srv://${mongoUser}:${mongoPassword}@vicluster-j65o8.mongodb.net/${mongoDB}?retryWrites=true&w=majority`
+    `mongodb+srv://${mongoUser}:${mongoPassword}@vicluster-j65o8.mongodb.net/${mongoDB}?retryWrites=true&w=majority`,
+    { useNewUrlParser: true},
 )
 .then(() => {
     app.listen(8000);
